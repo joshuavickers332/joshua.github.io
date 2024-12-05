@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Most popular Sneakers</h1>
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="Menssneakersection.html">Mens Sneakers</a></li>
+                <li><a href="Womanssneakersection.html"> Womans Sneakers</a></li>
+                <li><a href="Mostpopularsneaker.html">Most Popular Sneakers</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <body style="background-color:#e28c1c;">
+    <table>
+        <tr>
+            <td>
+                <img src="Screenshot 2024-11-28 184719.png" width="250" height="175">
+                <h4>Air Jordan 4 retro black/cement grey - $160</h4>
+                <button onclick="addToCart({name: 'Air Jordan 4 retro black/cement grey', price: 160, image: 'Screenshot 2024-11-28 184719.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 184726.png" width="250" height="175">
+                <h4>Air Jordan 4 Retro Military Blue - $200</h4>
+                <button onclick="addToCart({name: 'Air Jordan 4 Retro Military Blue', price: 200, image: 'Screenshot 2024-11-28 184726.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 184733.png" width="250" height="175">
+                <h4>Jordan 4 Retro SE Black Canvas - $220</h4>
+                <button onclick="addToCart({name: 'Jordan 4 Retro SE Black Canvas', price: 220, image: 'Screenshot 2024-11-28 184733.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 184746.png" width="250" height="175">
+                <h4>Air Jordan 13 Black Cat - $170</h4>
+                <button onclick="addToCart({name: 'Air Jordan 13 Black Cat ', price: 170, image: 'Screenshot 2024-11-28 184746.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 184753.png" width="250" height="175">
+                <h4>NikeXTravis Scott air jordan og SP Green and Beige - $650</h4>
+                <button onclick="addToCart({name: 'NikeXTravis Scott air jordan og SP Green and Beige', price: 650, image: 'creenshot 2024-11-28 184753.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 184936.png" width="250" height="175">
+                <h4>Nike Air Max Portal - $120</h4>
+                <button onclick="addToCart({name: 'Nike Air Max Portal', price: 120, image: 'Screenshot 2024-11-28 184936.png'})">Add to Cart</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="Screenshot 2024-11-28 185025.png" width="250" height="175">
+                <h4>Nike Air Max Plus Drift - $135</h4>
+                <button onclick="addToCart({name: 'Nike Air Max Plus Drift ', price: 135, image: 'Screenshot 2024-11-28 185025.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 185029.png" width="250" height="175">
+                <h4>Nike Air VaporMax 2021 FK Panther Black- $180</h4>
+                <button onclick="addToCart({name: 'Nike Air VaporMax 2021 FK Panther Black', price: 180, image: 'Screenshot 2024-11-28 185029.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 185039.png" width="250" height="175">
+                <h4>Air Jordan 1 Low SE - $135</h4>
+                <button onclick="addToCart({name: 'Air Jordan 1 Low SE', price: 135, image: 'Screenshot 2024-11-28 185039.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 185050.png" width="250" height="175">
+                <h4>Nike Air Max 1 - $120</h4>
+                <button onclick="addToCart({name: 'Nike Air Max 1', price: 120, image: 'Screenshot 2024-11-28 185050.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 185115.png" width="250" height="175">
+                <h4>Adidas Sambas Brown and White - $100</h4>
+                <button onclick="addToCart({name: 'Adidas Sambas Brown and White', price: 100, image: 'Screenshot 2024-11-28 185115.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-28 185126.png" width="250" height="175">
+                <h4>Adidas Ultraboost 1.0 - $195</h4>
+                <button onclick="addToCart({name: 'Adidas Ultraboost 1.0 ', price: 195, image: 'Screenshot 2024-11-28 185126.png'})">Add to Cart</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+        
+        function addToCart(item) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+                }
+
+        const links = document.querySelectorAll('nav ul li a');
+        links.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Womans Sneakers</h1>
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="Menssneakersection.html">Mens Sneakers</a></li>
+                <li><a href="Womanssneakersection.html"> Womans Sneakers</a></li>
+                <li><a href="Mostpopularsneaker.html">Most Popular Sneakers</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <body style="background-color:#e21cce;">
+    <table>
+        <tr>
+            <td>
+                <img src="Screenshot 2024-11-24 134612.png" width="250" height="175">
+                <h4>Adidas sambas white - $100</h4>
+                <button onclick="addToCart({name: 'Adidas sambas white', price: 100, image: 'Screenshot 2024-11-24 134612.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-23 180134.png" width="250" height="175">
+                <h4>Nike sleek white and baby blue - $150</h4>
+                <button onclick="addToCart({name: 'Nike sleek white and baby blue ', price: 150, image: 'Screenshot 2024-11-23 180134.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-27 190743.png" width="250" height="175">
+                <h4>Nike Airforce 1 pink and white - $120</h4>
+                <button onclick="addToCart({name: 'Nike Airforce 1 pink and white', price: 120, image: 'Screenshot 2024-11-27 190743.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-27 190757.png" width="250" height="175">
+                <h4>Nike low dunks brown and white - $150</h4>
+                <button onclick="addToCart({name: 'Nike low dunks brown and white ', price: 150, image: 'Screenshot 2024-11-27 190757.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-27 190808.png" width="250" height="175">
+                <h4>Nike v2k runs red an white - $120</h4>
+                <button onclick="addToCart({name: 'Nike v2k runs red an white', price: 120, image: 'Screenshot 2024-11-27 190808.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-27 190814.png" width="250" height="175">
+                <h4>Nike jordan lows grey and white with a gliter swoosh - $120</h4>
+                <button onclick="addToCart({name: 'Nike jordan lows grey and white with a gliter swoosh', price: 120, image: 'Screenshot 2024-11-27 190814.png'})">Add to Cart</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="Screenshot 2024-11-27 190838.png" width="250" height="175">
+                <h4>Nike Low blazer white and pink   &quot;Game Royal&quot; - $130</h4>
+                <button onclick="addToCart({name: 'Nike Low blazer white and pink', price: 130, image: 'Screenshot 2024-11-27 190838.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-27 190844.png" width="250" height="175">
+                <h4>Nike p600 white and pink - $150</h4>
+                <button onclick="addToCart({name: 'Nike p600 white and pink', price: 150, image: 'Screenshot 2024-11-27 190844.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-27 190849.png" width="250" height="175">
+                <h4>Nike Phoenix Waffle Pink -90$</h4>
+                <button onclick="addToCart({name: 'Nike Phoenix Waffle Pink', price: 90, image: 'Screenshot 2024-11-27 190849.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-27 190921.png" width="250" height="175">
+                <h4>Adidas Campus brown and beige - $120</h4>
+                <button onclick="addToCart({name: 'Adidas Campus brown and beige', price: 120, image: 'Screenshot 2024-11-27 190921.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-27 190931.png" width="250" height="175">
+                <h4>Adidas Sambas White and black - $120</h4>
+                <button onclick="addToCart({name: 'Adidas Sambas White and black', price: 120, image: 'Screenshot 2024-11-27 190931.png'})">Add to Cart</button>
+            </td>
+            <td>
+                <img src="Screenshot 2024-11-27 190938.png" width="250" height="175">
+                <h4>Adidas Vl Court Bold Shoes - $90</h4>
+                <button onclick="addToCart({name: 'Adidas Vl Court Bold Shoes', price: 90, image: 'Screenshot 2024-11-27 190938.png'})">Add to Cart</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+        
+        function addToCart(item) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+                }
+
+        const links = document.querySelectorAll('nav ul li a');
+        links.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+
